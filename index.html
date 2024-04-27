@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whatsapp web design using Html and Css</title>
+    <link rel="stylesheet" href="styles.Css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="leftside">
+        <!-- Headerrrrrrrrrrrr -->
+
+        <div class="header">
+          <div class="userImg">
+            <img
+              src="images/IMG-20240213-WA0112.jpg"
+              alt="user"
+              class="cover"
+            />
+          </div>
+          <!-- <div class="nav_icons"> -->
+          <ul class="nav_icons">
+            <li><ion-icon name="scan-circle-outline"></ion-icon></li>
+            <li><ion-icon name="chatbox"></ion-icon></li>
+            <li><ion-icon name="ellipsis-vertical"></ion-icon></li>
+          </ul>
+          <!-- </div> -->
+        </div>
+
+        <!-- searchhhhhhh -->
+        <div class="search-chat">
+          <div>
+            <input type="search" placeholder="search or start a new chat" autocomplete="off" />
+            <ion-icon name="search"></ion-icon>
+          </div>
+        </div>
+
+        <div class="chatList">
+          <div class="block unread">
+            <div class="imgbx">
+              <img src="images/dav.jpg" class="cover" />
+            </div>
+            <div class="details">
+              <!-- First User -->
+              <div class="listHead" onclick="firstChat()">
+                <h4>Davido</h4>
+                <p class="time">10:15</p>
+              </div>
+              <div class="message-p">
+                <p>Send your Aza, we rise by lifting others</p>
+                <b>5</b>
+              </div>
+            </div>
+          </div>
+          <div class="block active">
+            <div class="imgbx">
+              <img src="images/bad.jpg" class="cover" />
+            </div>
+
+            <!-- Olamide -->
+            <div class="details">
+              <div class="listHead">
+                <h4>Olamide baddo</h4>
+                <p class="time">18:25</p>
+              </div>
+              <div class="message-p">
+                <p>Welcome to YBNL my brother</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Don Jazzy -->
+          <div class="block unread">
+            <div class="imgbx">
+              <img src="images/don.jpg" class="cover" />
+            </div>
+            <div class="details">
+              <div class="listHead">
+                <h4>Don Jazzy</h4>
+                <p class="time">20:01</p>
+              </div>
+              <div class="message-p">
+                <p>
+                  You're a star my brother
+                </p>
+                <b>2</b>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dangote -->
+          <div class="block unread">
+            <div class="imgbx">
+              <img src="images/dang.jpg" class="cover" />
+            </div>
+            <div class="details">
+              <div class="listHead">
+                <h4>Dangote</h4>
+                <p class="time">22:45</p>
+              </div>
+              <div class="message-p">
+                <p>Let's meet tomorrow</p>
+                <b>2</b>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wizkid -->
+          <div class="block read">
+            <div class="imgbx">
+              <img src="images/wiz.jpg" class="cover" />
+            </div>
+            <div class="details">
+              <div class="listHead">
+                <h4>Wizkid</h4>
+                <p class="time">yesterday</p>
+              </div>
+              <div class="message-p">
+                <p>"Loyalty" is a banger</p>
+                <!-- <b>1</b> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- My babe💓💘💝 -->
+          <div class="block read">
+            <div class="imgbx">
+              <img src="images/user.jpg" class="cover" />
+            </div>
+            <div class="details">
+              <div class="listHead">
+                <h4>Babe💓💘💝</h4>
+                <p class="time">05/04/2024</p>
+              </div>
+              <div class="message-p">
+                <p>Who is that girl on your dp?🙄</p>
+                <!-- <b>1</b> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="imgbx">
+              <img src="images/img7.jpg" class="cover" />
+            </div>
+            <div class="details">
+              <div class="listHead">
+                <h4>Davido OBO</h4>
+                <p class="time">yesterday</p>
+              </div>
+              <div class="message-p">
+                <p>I've been streaming your song since broo you badd</p>
+                <b>2</b>
+              </div>
+            </div>
+          </div>
+
+          <!-- Davido -->
+          <div class="block">
+            <div class="imgbx">
+              <img src="images/img8.jpg" class="cover" />
+            </div>
+            <div class="details">
+              <div class="listHead">
+                <h4>Davido OBO</h4>
+                <p class="time">22:23</p>
+              </div>
+              <div class="message-p">
+                <p>Send you aza, we rise by lifting others</p>
+                <b>1</b>
+              </div>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="imgbx">
+              <img src="images/img9.jpg" class="cover" />
+            </div>
+            <div class="details">
+              <div class="listHead">
+                <h5>Davido OBO</h5>
+                <p class="time">yesterday</p>
+              </div>
+              <div class="message-p">
+                <p>I've been streaming your song since broo you badd</p>
+                <!-- <b>1</b> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat page code -->
+
+      <div class="rightside">
+        <div class="header">
+          <div class="imgText">
+            <div class="userImg">
+              <img src="images/bad.jpg" alt="user" class="cover" />
+            </div>
+            <h4>Olamide baddo <br /><span>online</span></h4>
+          </div>
+          <!-- <div class="nav_icons"> -->
+          <ul class="nav_icons">
+            <li><ion-icon name="search-outline"></ion-icon></li>
+            <!-- <li><ion-icon name="chatbox"></ion-icon></li> -->
+            <li><ion-icon name="ellipsis-vertical"></ion-icon></li>
+          </ul>
+          <!-- </div> -->
+        </div>
+
+        <!-- chatbox -->
+        <div class="chatBox" id="chatBx">
+          <!-- Olamide's message -->
+          <div class="message frnd_message">
+            <p> What's up my brother  <br /><span>11:52</span></p>
+          </div>
+
+          <!-- my message -->
+          <div class="message my_message">
+            <p> Am I dreaming????😲😲  <br /><span>12:01</span></p>
+          </div>
+
+          <!-- Olamide's message -->
+          <div class="message frnd_message">
+            <p>  Lol this is not A DREAM   <br /><span>12:03</span></p>
+          </div>
+
+          <!-- my message -->
+          <div class="message my_message">
+            <p>Eii God King Baddo in my dm I don bloww
+               <br /><span
+                >12:05</span
+              >
+            </p>
+          </div>
+
+          <!-- Olamide's message -->
+          <div class="message frnd_message">
+            <p>  You deserve to blow my brother <br /><span>12:07</span></p>
+          </div>
+
+          <!-- my message -->
+          <div class="message my_message">
+            <p>   Thanks Boss this realy means a lot to me🥹🥹 <br /><span>12:08</span></p>
+          </div>
+
+          <!-- Olamide's message -->
+          <div class="message frnd_message">
+            <p>  You are talented no cap</caption>
+               <br /><span
+                >12:09</span
+              >
+            </p>
+          </div>
+
+          <!-- my message -->
+          <div class="message my_message">
+            <p>Today is the best day of my lifeeee. Baddo said I am talented 
+               <br /><span>12:10</span>
+            </p>
+          </div>
+
+          <!-- Olamide's message -->
+          <div class="message frnd_message">
+            <p> I've been streaming your songs from Gameover to Only you to Loyalty and I must say everything is a back to back banger keep it up brother <br /><span>12:12</span></p>
+          </div>
+
+          <!-- my message -->
+          <div class="message my_message">
+            <p>  Eii God Baddo is streaming my song, My life don change  <br /><span>12:13</span></p>
+          </div>
+
+          <!-- Olamide's message -->
+          <div class="message frnd_message">
+            <p> Let's work together some time  <br /><span>12:16</span></p>
+          </div>
+
+          <!-- my message -->
+          <div class="message my_message">
+            <p>  Omo this has been my life long dream and everything is coming to pass🥹, I know you've probably heard ths alot but I am your biggest fan and You've been my role model since  started doing music   <br /><span>12:17</span></p>
+          </div>
+
+          <!-- Olamide's message -->
+          <div class="message frnd_message">
+            <p>I appreciate that, So what do you say to joining YBNL?    <br /><span>12:19</span></p>
+          </div>
+
+          <!-- my message -->
+          <div class="message my_message">
+            <p> Eii God 😭😭   <br /><span>12:20</span></p>
+          </div>
+
+
+          <!-- my message -->
+          <div class="message my_message">
+            <p>  I don finally bloww, It's comin pass🥹  <br /><span>12:13</span></p>
+          </div>
+
+          <!-- Olamide's message -->
+          <div class="message frnd_message">
+            <p> Take some time to think about itt  <br /><span>12:16</span></p>
+          </div>
+
+          <!-- my message -->
+          <div class="message my_message">
+            <p> Boss there's nothing to think about, This has been my life long dream bosssss ,  Olamide the Star maker, Legend, Odogwu, my own 001. Thannks boss  I will not disappoint you😭🙏❣️  <br /><span>12:13</span></p>
+          </div>
+
+          <!-- Olamide's message -->
+          <div class="message frnd_message">
+            <p> Welcome to YBNL my brother <br /><span>12:16</span></p>
+          </div>
+        </div>
+
+        <!-- chat Input -->
+        <div class="chat-input">
+          <ion-icon name="happy-outline"></ion-icon>
+          <ion-icon name="attach-outline"></ion-icon>
+          <input type="text" placeholder="Type a message" id="chatInput" />
+          <ion-icon name="mic"></ion-icon>
+          <ion-icon name="send-sharp" id="send"></ion-icon>
+        </div>
+        
+      </div>
+    </div>
+    
+
+    <script
+      type="module"
+      `
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
