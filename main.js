@@ -1,155 +1,167 @@
 const input = document.getElementById("chatInput");
 const send = document.getElementById("send");
+const back = document.getElementById("back");
+const leftside = document.getElementById("leftSide");
+const rightside = document.getElementById("rightSide");
 
-const today = new Date();
-let Hour = today.getHours();
-let min = today.getMinutes();
-let time = `${Hour}:${min}`;
-console.log(time);
-let sentTime = 0;
-const chatBx = document.getElementById("chatBx");
+window.addEventListener("DOMContentLoaded", () => {
+  back.addEventListener("click", () => {
+    showLefside();
+  });
 
-// let chatBox = document.createElement("div"); //document.getElementById('chatBx')
-// let div = document.createElement("div");
-// let p = (div.textContent = document.createElement("p"));
+  // function swipeRight() {
+  //   if (touchendX > touchstartX + 50) {
+  //     rightside.style.flex = "100%";
+  //     rightside.style.display = "block";
+  //     leftside.style.display = "none";
+  //     rightside.style.transform = "translateX(100px)";
+  //   }
+  // }
 
-//   div.setAttribute("class", "message my_message");
-//   chatBox.setAttribute("class", "chatBox");
+  // rightside.addEventListener("touchstart", (event) => {
+  //   touchstartX = event.changedTouches[0].screenX; // Get starting touch position
+  // });
 
-//   p.setAttribute("class", "message my_message");
-//   console.log(div);
+  // rightside.addEventListener("touchend", (event) => {
+  //   touchendX = event.changedTouches[0].screenX; // Get ending touch position
+  //   swipeRight(); // Check the swipe direction
+  // });
 
-const sendMessage = () => {
-  sentTime += 1;
-  console.log(sentTime);
-  if (input.value == "") {
-    return "";
-  } else {
-    if (sentTime % 2 === 0) {
-      myMessage();
-    } else if (sentTime % 2 !== 0) {
-      frndMessage();
-    }
+  function showLefside() {
+    leftside.style.flex = "100%";
+    leftside.style.display = "block";
+    rightside.style.display = "none";
   }
 
-  // Log the chat container (optional)
-  console.log(chatBx);
-};
-
-send.addEventListener("click", () => {
-  sendMessage();
-  scrollToBottom()
-
-});
-
-function scrollToBottom() {
-  // var chatMessages = document.getElementById("chat-messages");
-  chatBx.scrollTop = chatBx.scrollHeight;
-}
-
-// Clear the input field when the page loads
-document.addEventListener("DOMContentLoaded", function () {
-  input.value = "";
-});
-
-const myMessage = () => {
-  // Create a new chat message container
+  const today = new Date();
+  let Hour = today.getHours();
+  let min = today.getMinutes();
+  let time = `${Hour}:${min}`;
+  let sentTime = 0;
   const chatBx = document.getElementById("chatBx");
-  // chatBx.id = "chatBx";
 
-  // Create a message div
-  const messageDiv = document.createElement("div");
-  messageDiv.classList.add("message", "my_message");
+  const sendMessage = () => {
+    sentTime += 1;
+    if (input.value == "") {
+      return "";
+    } else {
+      if (sentTime % 2 === 0) {
+        myMessage();
+      } else if (sentTime % 2 !== 0) {
+        frndMessage();
+      }
+    }
 
-  // Get the input value (assuming 'input' is defined elsewhere in your code)
-  const inputValue = input.value;
+    // Log the chat container (optional)
+  };
 
-  // Create a paragraph element for the message text
-  const messageText = document.createElement("p");
-  messageText.textContent = inputValue; // Display the input value
+  send.addEventListener("click", () => {
+    sendMessage();
+    scrollToBottom();
+  });
 
-  // Create a timestamp span (you can customize this as needed)
-  const timestamp = document.createElement("span");
-  timestamp.textContent = time; // Set the timestamp value
+  function scrollToBottom() {
+    chatBx.scrollTop = chatBx.scrollHeight;
+  }
 
-  //creating  a breaking tag
-  const br = document.createElement("br");
-  //Appending the br tag to the message Div
-  messageText.appendChild(br);
+  // Clear the input field when the page loads
+  document.addEventListener("DOMContentLoaded", function () {
+    input.value = "";
+  });
 
-  // Append the timestamp to the message text
+  const myMessage = () => {
+    // Create a new chat message container
+    const chatBx = document.getElementById("chatBx");
+    // chatBx.id = "chatBx";
 
-  messageText.appendChild(timestamp);
+    // Create a message div
+    const messageDiv = document.createElement("div");
+    messageDiv.classList.add("message", "my_message");
 
-  // Append the message text to the message div
-  messageDiv.appendChild(messageText);
+    // Get the input value (assuming 'input' is defined elsewhere in your code)
+    const inputValue = input.value;
 
-  // Append the message div to the chat container
-  chatBx.appendChild(messageDiv);
-  input.value = "";
+    // Create a paragraph element for the message text
+    const messageText = document.createElement("p");
+    messageText.textContent = inputValue; // Display the input value
+
+    // Create a timestamp span (you can customize this as needed)
+    const timestamp = document.createElement("span");
+    timestamp.textContent = time; // Set the timestamp value
+
+    //creating  a breaking tag
+    const br = document.createElement("br");
+    //Appending the br tag to the message Div
+    messageText.appendChild(br);
+
+    // Append the timestamp to the message text
+
+    messageText.appendChild(timestamp);
+
+    // Append the message text to the message div
+    messageDiv.appendChild(messageText);
+
+    // Append the message div to the chat container
+    chatBx.appendChild(messageDiv);
+    input.value = "";
 
     scrollToBottom();
 
+    // Append the chat container to the body (or any other parent element)
+    // document.body.appendChild(chatBx);
+  };
 
-  // Append the chat container to the body (or any other parent element)
-  // document.body.appendChild(chatBx);
-};
+  const frndMessage = () => {
+    // Create a new chat message container
+    const chatBx = document.getElementById("chatBx");
+    // chatBx.id = "chatBx";
 
-const frndMessage = () => {
-  // Create a new chat message container
-  const chatBx = document.getElementById("chatBx");
-  // chatBx.id = "chatBx";
+    // Create a message div
+    const messageDiv = document.createElement("div");
+    messageDiv.classList.add("message", "frnd_message");
 
-  // Create a message div
-  const messageDiv = document.createElement("div");
-  messageDiv.classList.add("message", "frnd_message");
+    // Get the input value (assuming 'input' is defined elsewhere in your code)
+    const inputValue = input.value;
 
-  // Get the input value (assuming 'input' is defined elsewhere in your code)
-  const inputValue = input.value;
+    // Create a paragraph element for the message text
+    const messageText = document.createElement("p");
+    messageText.textContent = inputValue; // Display the input value
 
-  // Create a paragraph element for the message text
-  const messageText = document.createElement("p");
-  messageText.textContent = inputValue; // Display the input value
+    // Create a timestamp span (you can customize this as needed)
+    const timestamp = document.createElement("span");
+    timestamp.textContent = time; // Set the timestamp value
 
-  // Create a timestamp span (you can customize this as needed)
-  const timestamp = document.createElement("span");
-  timestamp.textContent = time; // Set the timestamp value
+    //creating  a breaking tag
+    const br = document.createElement("br");
+    //Appending the br tag to the message Div
+    messageText.appendChild(br);
 
-  //creating  a breaking tag
-  const br = document.createElement("br");
-  //Appending the br tag to the message Div
-  messageText.appendChild(br);
+    // Append the timestamp to the message text
 
-  // Append the timestamp to the message text
+    messageText.appendChild(timestamp);
 
-  messageText.appendChild(timestamp);
+    // Append the message text to the message div
+    messageDiv.appendChild(messageText);
 
-  // Append the message text to the message div
-  messageDiv.appendChild(messageText);
+    // Append the message div to the chat container
+    chatBx.appendChild(messageDiv);
+    scrollToBottom();
+    input.value = "";
 
-  // Append the message div to the chat container
-  chatBx.appendChild(messageDiv);
-  scrollToBottom();
-  input.value = "";
+    // Append the chat container to the body (or any other parent element)
+    // document.body.appendChild(chatBx);
+  };
 
-  // Append the chat container to the body (or any other parent element)
-  // document.body.appendChild(chatBx);
-};
+  input.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      sendMessage();
+    }
+  });
 
-input.addEventListener("keypress", function (event) {
-  if(event.key === "Enter"){
-    sendMessage()
-  }
+  const chatBox = document.querySelector(".chatBox");
+  let chatInput = document.querySelector(".chat-input");
+
+  const firstChat = () => {
+    chatBox.style.display = "none";
+  };
 });
-
-  const chatBox = document.querySelector('.chatBox')
-let chatInput = document.querySelector(".chat-input")
-// chatBox.style.display = 'none'
-console.log(chatInput)
-console.log(chatBox)
-
-const firstChat = () => {
-
-
-  chatBox.style.display = 'none'
-}
